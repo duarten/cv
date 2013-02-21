@@ -1,0 +1,103 @@
+\documentclass[12pt,a4paper]{moderncv}
+\usepackage{libertine}
+\usepackage[T1]{fontenc}
+\renewcommand{\sfdefault}{\rmdefault}
+
+\usepackage{moderntimeline}
+
+% moderncv themes
+\moderncvtheme[blue]{classic}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+%\moderncvtheme[green]{classic}           % idem
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+
+\tlmaxdates{2008.7}{2013}
+
+%\setlength{\hintscolumnwidth}{0.18\textwidth}
+%\recomputelengths
+
+% personal data
+\firstname{Duarte}
+\familyname{Nunes}
+%\title{Resumé title (optional)}        
+\address{Rua Francisco Metrass, n 58, 2 Dt}{1350-146 Lisbon, Portugal}    
+\mobile{+351 96 653 27 33}            
+%\phone{847.477.6005}                  
+%\fax{fax (optional)}                          
+\email{duarte.m.nunes@gmail.com}
+\extrainfo{\includegraphics[height=12pt]{octocatvector.eps}~\href{https://github.com/duarten}{github.com/duarten} \\\includegraphics[height=12pt]{twitter.eps}~\href{https://twitter.com/duarte_nunes}{@duarte\_nunes}}
+\photo[64pt]{me.jpg}                         
+\quote{}            
+
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+\makeatletter
+\pgfmathsetmacro\tl@textstartabove{\tl@width-2pt}
+
+\tltextsingle{\scriptsize}
+\tltextstart[north]{\scriptsize}
+\tltextend[south]{\scriptsize}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+\section{Summary}
+
+\cvitem{}{Software engineer, always looking for new and challenging problems to solve. Strong background in concurrent programming and kernel programming. \newline\newline Currently immersed in functional and logic programming, big data architectures and distributed systems.}
+
+\section{Experience}
+
+\tlcventry{2012}{0}{Software Architect}{Nokia Siemens Networks}{}{}{Works as a software architect on large-scale brownfield Java projects concerning the planning and management of large optical networks, focusing on their evolution towards a high-performance and concurrent implementation.}
+\cvitem{}{}
+
+\tlcventry{2009}{0}{Software Engineer}{CCISEL}{}{}
+{Examples of activities:
+\begin{itemize}
+  \item Lecturer at the PROMPT post-graduation;
+  \item Consultant for Talaris, producing a Windows device driver for proprietary hardware;
+  \item Trainer at EID during a four-week course on C++ programming for embedded systems;
+  \item Consultant for Talaris working on the adaptation of a specialized and proprietary Win32 library for the Linux operating system.
+\end{itemize}
+}
+\cvitem{}{}
+
+\tlcventry{2011}{2012}{Software Engineer}{SAPO}{}{}{Worked as a Software Engineer on the Service Bus team, composed of 8 people, using .NET technologies. Focused on architectural aspects and features related to parallel and asynchronous programming and distributed caching.}
+\cvitem{}{}
+
+\tlcventry{2010}{2011}{Teacher Assistant of Computer and Software Engineering}{ISEL}{}{}{Worked as a teacher assistant for software engineering courses, namely on the Concurrent Programming and Software Laboratory courses.}
+\cvitem{}{}
+
+\tllabelcventry{2011}{2011.5}{2011}{Independent Contractor}{Google}{}{}{In the context of the 2011 edition of Google Summer of Code, developed the project "SlimThreading on Mono" with the purpose of enhancing the threading infrastructure of the Mono open source project.}
+\cvitem{}{}
+
+\section{Education}
+\cventry{2005}{BS, Computer and Software Engineering}{Instituto Superior de Engenharia de Lisboa}{}{\textit{Portugal}}{} %arguments 3 to 6 are optional
+\subsection{Thesis}
+\cvitem{title}{Concurrent Programming Infrastructures} 
+\cvitem{description}{Obtained the highest grade (20/20) for the final thesis, a project on concurrent programming infrastructures, where he built a user mode scheduler based on the Windows 7 user mode scheduling API and devised techniques for user-mode blocking and seamless synchronization of user-mode threads with normal NT threads.} 
+
+\section{Skills}
+\cvitem{Disciplines}{Concurrent programming, kernel programming, functional programming, virtual execution environments}
+\cvitem{Programming Languages}{Clojure, Java, C, C++, C\#, JavaScript, Ruby}
+\cvitem{Technologies}{JVM, .NET, Mono, Windows Research Kernel, Windows Driver Foundation, Linux, MongoDb, Datomic, X86 Virtualization}
+
+\section{Languages}
+\cvitem{Portuguese}{Native or bilingual proficiency}
+\cvitem{English}{Native or bilingual proficiency}
+\cvitem{Spanish}{Professional working proficiency}
+\cvitem{German}{Limited working proficiency}
+\cvitem{French}{Limited working proficiency}
+
+\closesection{}                   % needed to renewcommands
+\renewcommand{\listitemsymbol}{-} % change the symbol for lists
+
+% Publications from a BibTeX file
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}       % 'publications' is the name of a BibTeX file
+
+\end{document}
