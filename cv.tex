@@ -1,18 +1,22 @@
 \documentclass[12pt,a4paper]{moderncv}
 \usepackage{libertine}
 \usepackage[T1]{fontenc}
+\usepackage{epstopdf}
 \renewcommand{\sfdefault}{\rmdefault}
-
-\usepackage{moderntimeline}
 
 % moderncv themes
 \moderncvtheme[blue]{classic}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
 %\moderncvtheme[green]{classic}           % idem
 
+\AfterPreamble{\hypersetup{
+  pdfauthor={Duarte Nunes},
+  pdftitle={CV for Duarte Nunes},
+  pdfsubject={Detailed CV for Duarte Nunes},
+  urlcolor=blue,
+}}
+
 % adjust the page margins
 \usepackage[scale=0.8]{geometry}
-
-\tlmaxdates{2008.7}{2013}
 
 %\setlength{\hintscolumnwidth}{0.18\textwidth}
 %\recomputelengths
@@ -26,18 +30,11 @@
 %\phone{847.477.6005}                  
 %\fax{fax (optional)}                          
 \email{duarte.m.nunes@gmail.com}
-\extrainfo{\includegraphics[height=12pt]{octocatvector.eps}~\href{https://github.com/duarten}{github.com/duarten} \\\includegraphics[height=12pt]{twitter.eps}~\href{https://twitter.com/duarte_nunes}{@duarte\_nunes}}
-\photo[64pt]{me.jpg}                         
+\extrainfo{\includegraphics[height=12pt]{octocatvector}~\href{https://github.com/duarten}{github.com/duarten} \\\includegraphics[height=8pt]{twitter}~\href{https://twitter.com/duarte_nunes}{@duarte\_nunes}\\January 19, 1986}
+\photo[64pt][0pt]{me.jpg}                         
 \quote{}            
 
 %\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
-
-\makeatletter
-\pgfmathsetmacro\tl@textstartabove{\tl@width-2pt}
-
-\tltextsingle{\scriptsize}
-\tltextstart[north]{\scriptsize}
-\tltextend[south]{\scriptsize}
 
 %----------------------------------------------------------------------------------
 %            content
@@ -55,19 +52,36 @@
 \cvitem{}{}
 
 \cventry{Jan 2009 \hfill \newline \textit{now}}{Software Engineer}{CCISEL}{}{}
-{Examples of activities:
-\begin{itemize}
-  \item Lecturer at the PROMPT post-graduation on the web services and concurrent programming modules;
-  \item Did research on concurrent programming, developing novel synchronization infrastructures;
-  \item Did research on operating systems with the Windows Research Kernel;
-  \item Consultant for Talaris, producing a Windows device driver for proprietary ATM hardware;
-  \item Trainer at EID during a four-week course on C++ programming tailored for embedded systems programming;
-  \item Consultant for Talaris working on the adaptation of a specialized and proprietary Win32 library for the Linux operating system.
-\end{itemize}
-}
+{Member of the CCISEL group at ISEL, doing research, development, education and training. Examples of activities:}
+
+\cvitem{}{
+\begin{description}
+  \item[2009 - \textit{now}] \hfill \newline Started as a grant holder doing research on concurrent programming and operating systems (mainly with the Windows Research Kernel); developed novel synchronization infrastructures (such as the \href{https://github.com/SlimThreading}{\color{blue}{SlimThreading}} framework), and is currently working on integrating them into the Linux kernel;
+\end{description}}
+\vspace{-3ex}
+\cvitem{}{
+\begin{description}
+  \item[2011-2012] \hfill \newline Lectured at the PROMPT post-graduation on the web services and concurrent programming modules;
+\end{description}}
+\vspace{-3ex}
+\cvitem{}{
+\begin{description}
+  \item[2011] \hfill \newline Did consulting for Talaris, producing a Windows device driver for proprietary ATM hardware;
+\end{description}}
+\vspace{-3ex}
+\cvitem{}{
+\begin{description}
+\item[2010] \hfill \newline Gave training at EID during a four-week course on C++ programming tailored for embedded systems programming;
+\end{description}}
+\vspace{-3ex}
+\cvitem{}{
+\begin{description}
+  \item[2010] \hfill \newline Did consulting for Talaris working on the adaptation of a specialized and proprietary Win32 library for the Linux operating system.
+\end{description}}
+
 \cvitem{}{}
 
-\cventry{Sept 2011 \hfill \newline Jun 2012}{Software Engineer}{SAPO}{}{}{Worked as a Software Engineer, using .NET technologies, on the Service Delivery Broker, namely on the engine that exchanges the messages between the client and the service, which provides cross-cutting features such as: data transformation, routing, authentication, authorization, throttling, load balancing, protocol bridging, caching, etc. Refactored the core runtime towards a parallel and asynchronous implementation and developed the distributed throttling and caching features.}
+\cventry{Sept 2011 \hfill \newline Jun 2012}{Software Engineer}{SAPO, Portugal Telecom}{}{}{Worked as a Software Engineer, employing .NET technologies, on the Service Delivery Broker, used internally at Portugal Telecom and at various customers. Mainly worked on the engine that exchanges the messages between the client and the service, providing cross-cutting features such as: data transformation, routing, authentication, authorization, throttling, load balancing, protocol bridging, caching, etc. Refactored the core runtime towards a parallel and asynchronous implementation and developed the distributed throttling and caching features.}
 \cvitem{}{}
 
 \cventry{Sept 2010 \hfill \newline Nov 2011}{Teacher Assistant of Computer and Software Engineering}{ISEL}{}{}{Worked as a teacher assistant for software engineering courses, namely on Concurrent Programming, a 5th semester course where students learn threads (using a C implementation of green threads), Java and .NET synchronization, memory models, asynchronous programming and concurrent programming models, and on Software Laboratory, a 4th semester course where students develop a fully-featured Java web application during the whole semester.}
@@ -77,7 +91,7 @@
 \cvitem{}{}
 
 \section{Education}
-\cventry{2005}{BS, Computer and Software Engineering}{Instituto Superior de Engenharia de Lisboa}{}{\textit{Portugal}}{} %arguments 3 to 6 are optional
+\cventry{2005 -- 2009}{BS, Computer and Software Engineering}{ISEL - Instituto Superior de Engenharia de Lisboa}{}{\textit{Portugal}}{} %arguments 3 to 6 are optional
 \subsection{Thesis}
 \cvitem{title}{Concurrent Programming Infrastructures} 
 \cvitem{description}{Obtained the highest grade (20/20) for the final thesis, a project on concurrent programming infrastructures, where he built a user mode scheduler based on the Windows 7 user mode scheduling API and devised a novel technique for user-mode blocking and seamless synchronization of user-mode threads with regular NT threads.} 
@@ -98,8 +112,8 @@
 \renewcommand{\listitemsymbol}{-} % change the symbol for lists
 
 % Publications from a BibTeX file
-\nocite{*}
-\bibliographystyle{plain}
-\bibliography{publications}       % 'publications' is the name of a BibTeX file
+%\nocite{*}
+%\bibliographystyle{plain}
+%\bibliography{publications}       % 'publications' is the name of a BibTeX file
 
 \end{document}
