@@ -25,7 +25,7 @@
 \firstname{Duarte}
 \familyname{Nunes}
 \title{Software Engineer}
-\phone{(+34) 665 604 852}
+\phone{+55 19 98769-1733}
 \email{duarte.m.nunes@gmail.com}
 \extrainfo{\includegraphics[height=12pt]{octocatvector}~\href{https://github.com/duarten}{github.com/duarten} \\\includegraphics[height=8pt]{twitter}~\href{https://twitter.com/duarte_nunes}{@duarte\_nunes}\\January 19, 1986}
 \photo[64pt][0pt]{me.jpg}                      
@@ -41,11 +41,25 @@
 
 \section{Summary}
 
-\cvitem{}{Software engineer with a strong background in concurrent programming and kernel programming. Currently immersed in distributed systems and high-performance, low-latency software.}
+\cvitem{}{Software engineer with a strong background in systems programming. Currently immersed in distributed systems and high-performance, low-latency software.}
 
 \section{Experience}
 
-\cventry{Aug 2013 \hfill \newline \textit{now}}{Software Engineer}{Midokura}{}{}{Works as a software engineer on MidoNet, a virtual network platform for IaaS clouds. Focuses on the architecture and implementation of the core network controller, a distributed and highly concurrent software written in Java and Scala. Responsibilities include: 
+\cventry{Apr 2019 \hfill \newline Nov 2019}{CTO}{vectorized.io}{}{}{
+Developed the initial infrastructure for Redpanda, a Kafka API-compatible, transactional, and safe queue, intended for massive data streams. It is built on top of the Seastar project, an advanced C++ framework for high-performance server applications. Redpanda has no dependencies on external systems, provides over 10x more throughput than the competition at predictable latencies, and allows for proportional cost savings.
+}
+\cvitem{}{}
+
+\cventry{Mar 2016 \hfill \newline Apr 2019}{Software Engineer}{ScyllaDB}{}{}{
+Worked on ScyllaDB, a high-performance NoSQL database compatible with Apache Cassandra, optimized for modern hardware, and the underlying Seastar project, an advanced C++ framework for high-performance server applications.
+\newline \newline
+Developed several cross-cutting features, including: range tombstones; thrift support; materialized views; Raft and lightweight transactions.
+\newline \newline
+As a maintainer, reviewed contributions to multiple components of the system, enforcing correctness and design constraints.
+}
+\cvitem{}{}
+
+\cventry{Aug 2013 \hfill \newline Mar 2016}{Software Engineer}{Midokura}{}{}{Worked as a software engineer on MidoNet, a virtual network platform for IaaS clouds. Focuses on the architecture and implementation of the core network controller, a distributed and highly concurrent software written in Java and Scala. Responsibilities include: 
 \begin{itemize}
 \item defining and implementing network controller features (e.g., resource protection, cross-site peering, L4 load balancing, etc.), 
 \item defining and implementing cross-controller features (e.g., distributed flow state management and replication, port migration, NAT port reservation, etc.) 
@@ -96,7 +110,28 @@
 \cvitem{}{}
 
 \section{Speaking Engagements}
-\cventry{Jan 2016}{Challenges in Distributed SDN}{FOSDEM 2016}{}{Brussels, Belgium}{}
+
+\cventry{Fev 02, 2019}{Raft in Scylla: Consensus in an eventually consistent database}{FOSDEM}{}{Brussels, Belgium}{
+This talk will cover the characteristics and requirements of Scylla's Raft implementation, how it enables strongly consistent updates, and how it improves the reliability and safety of internal processes, such as schema changes, node membership, and range movements. 
+\\ \\
+Eventually consistent databases choose to remain available under failure, allowing for conflicting data to be stored in different replicas (later repaired by background processes). Weakening the consistency guarantees improves not only availability, but also performance, as the number of replicas involved in a given operation can be minimized. There are, however, use-cases that require the opposite trade-off. Indeed, Apache Cassandra and Scylla provide Lightweight Transactions (LWT), which allow single-key linearizable updates. The mechanism underlying LWT is asynchronous consensus in the form of the Raft algorithm. In this talk, we'll describe the characteristics and requirements of Scylla's consensus implementation, and how it enables strongly consistent updates. We will also cover how consensus can be applied to other aspects of the system, such as schema changes, node membership, and range movements, in order to improve their reliability and safety. We will thus show that an eventually consistent database can leverage consensus without compromising either availability or performance.}
+\cvitem{}{}
+
+\cventry{Nov 07, 2018}{Consensus in Eventually Consistent Databases}{Scylla Summit}{}{San Francisco, USA}{Eventually consistent databases choose to remain available under failure, allowing for conflicting data to be stored in different replicas (later repaired by background processes). Weakening the consistency guarantees improves not only availability, but also performance, as the number of replicas involved in a given operation can be minimized. There are, however, use-cases that require the opposite trade-off. Indeed, Apache Cassandra and Scylla provide Lightweight Transactions (LWT), which allow single-key linearizable updates. The mechanism underlying LWT is asynchronous consensus. In this talk, we'll describe the characteristics and requirements of Scylla's consensus implementation, and how it enables strongly consistent updates. We will also cover how consensus can be applied to other aspects of the system, such as schema changes, node membership, and range movements, in order to improve their reliability and safety. We will thus show that an eventually consistent database can leverage consensus without compromising either availability or performance.}
+\cvitem{}{}
+
+\cventry{Oct 24, 2017}{Distributed Materialized Views}{Scylla Summit}{}{San Francisco, USA}{Materialized views are tables that store, redundantly, a subset of the columns from a given base table. The partitions in the view typically have a different key, allowing for queries unsupported by the base table.
+\newline \newline
+Supporting materialized views in a multi-master, eventually consistent store such as Scylla presents some challenges. In the absence of a single master serializing updates to each partition, we need a decentralized way of incrementally maintaining materialized views. A solution mustn’t negatively affect cluster availability and request latency, as these are important characteristics of Scylla.}
+\cvitem{}{}
+
+\cventry{Jun 09, 2017}{Scylla: Faster than a Speeding Byte}{TECHINPORTO}{}{Oporto, Portugal}{Scylla is a NoSQL database providing Apache Cassandra compatibility, distinguishing itself by supporting millions of operations per second, per node, with predictably low latency, on similar hardware. This talk will introduce Scylla, highlight some of its achievements, and lift the veil on the many design decisions, from programming model to the low-level, mechanical sympathetic details of its memory allocators.}
+\cvitem{}{}
+
+\cventry{May 19, 2017}{ScyllaDB: NoSQL at Ludicrous Speed}{J On The Beach}{}{Malaga, Spain}{ScyllaDB is a NoSQL database providing Apache Cassandra compatibility, distinguishing itself by supporting millions of operations per second, per node, with predictably low latency, on similar hardware. This talk will cover the design decisions and techniques that enable such an achievement.}
+\cvitem{}{}
+
+\cventry{Jan 2016}{Challenges in Distributed SDN}{FOSDEM}{}{Brussels, Belgium}{}
 \cvitem{}{}
 
 \cventry{Nov 2015}{MidoNet and the Open vSwitch Datapath}{Open vSwitch 2015 Fall Conference}{}{San Jose, California, USA}{}
@@ -109,6 +144,8 @@
 \subsection{Thesis}
 \cvitem{title}{Concurrent Programming Infrastructures} 
 \cvitem{description}{Obtained the highest grade (20/20) for the final thesis, a project on concurrent programming infrastructures, where he built a user mode scheduler based on the Windows 7 user mode scheduling API and devised a novel technique for user-mode blocking and seamless synchronization of user-mode threads with regular NT threads.} 
+
+\newpage
 
 \section{Skills}
 \cvitem{Disciplines}{Concurrent programming, kernel programming, computer networks, virtualization, distributed systems}
@@ -130,3 +167,4 @@
 %\bibliography{publications}       % 'publications' is the name of a BibTeX file
 
 \end{document}
+
